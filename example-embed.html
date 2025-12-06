@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example: Embedding AI Support Bot</title>
+  <style>
+    /* Example page styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+    .code-block {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', monospace;
+      color: #333;
+    }
+  </style>
+  
+  <!-- Include the chatbot styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Example: AI Support Bot Embedded</h1>
+    <p>This page demonstrates how the AI Support Bot plugin can be embedded in any website.</p>
+    <p>The chatbot widget appears in the bottom-right corner. Click it to start chatting!</p>
+    
+    <h2>How to Embed</h2>
+    <p>To embed the chatbot in your website, simply include the CSS and JavaScript files:</p>
+    
+    <div class="code-block">
+      <code>
+&lt;!-- In your HTML head --&gt;<br>
+&lt;link rel="stylesheet" href="styles.css"&gt;<br><br>
+&lt;!-- Before closing body tag --&gt;<br>
+&lt;script src="renderer.js"&gt;&lt;/script&gt;
+      </code>
+    </div>
+    
+    <p>The chatbot will automatically initialize when the page loads.</p>
+    
+    <h2>Features</h2>
+    <ul>
+      <li>Beautiful, modern UI</li>
+      <li>Responsive design</li>
+      <li>Smooth animations</li>
+      <li>AI-powered responses</li>
+      <li>Easy to customize</li>
+    </ul>
+    
+    <p>Try asking the bot about:</p>
+    <ul>
+      <li>Business hours</li>
+      <li>Contact information</li>
+      <li>Pricing details</li>
+      <li>Or anything else!</li>
+    </ul>
+  </div>
+
+  <!-- Include the chatbot script - This will automatically initialize the bot -->
+  <script src="renderer.js"></script>
+  
+  <!-- Note: The HTML structure for the chatbot is automatically injected by the script -->
+  <!-- If you want to include it manually, add the chatbot-widget div from index.html -->
+</body>
+</html>
+

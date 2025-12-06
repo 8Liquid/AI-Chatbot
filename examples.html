@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbot - Configuration Examples</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+    
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .example-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .example-card h2 {
+      color: #333;
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+    }
+    
+    .example-card p {
+      color: #666;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    
+    .code-block {
+      background: #f5f5f5;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 16px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+    }
+    
+    .btn {
+      background: #646cff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .btn:hover {
+      background: #535bf2;
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: #10b981;
+    }
+    
+    .btn-secondary:hover {
+      background: #059669;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 AI Chatbot Configuration Examples</h1>
+    
+    <div class="examples-grid">
+      <!-- Example 1: Basic -->
+      <div class="example-card">
+        <h2>1. Basic Setup</h2>
+        <p>The simplest way to get started with default settings.</p>
+        <div class="code-block">const chatbot = new AIChatbot();</div>
+        <button class="btn" onclick="initExample1()">Try Example 1</button>
+      </div>
+      
+      <!-- Example 2: Custom Colors -->
+      <div class="example-card">
+        <h2>2. Custom Colors</h2>
+        <p>Customize the primary color and bubble colors.</p>
+        <div class="code-block">const chatbot = new AIChatbot({
+  primaryColor: '#10b981',
+  primaryHover: '#059669',
+  userBubbleColor: '#10b981'
+});</div>
+        <button class="btn btn-secondary" onclick="initExample2()">Try Example 2</button>
+      </div>
+      
+      <!-- Example 3: Position -->
+      <div class="example-card">
+        <h2>3. Custom Position</h2>
+        <p>Position the chatbot in different corners.</p>
+        <div class="code-block">const chatbot = new AIChatbot({
+  position: 'bottom-left'
+});</div>
+        <button class="btn" onclick="initExample3()">Try Example 3</button>
+      </div>
+      
+      <!-- Example 4: Dark Theme -->
+      <div class="example-card">
+        <h2>4. Dark Theme</h2>
+        <p>Use a dark color scheme.</p>
+        <div class="code-block">const chatbot = new AIChatbot({
+  theme: 'dark',
+  backgroundColor: '#1a1a1a',
+  textColor: '#ffffff',
+  botBubbleColor: '#2d2d2d'
+});</div>
+        <button class="btn" onclick="initExample4()">Try Example 4</button>
+      </div>
+      
+      <!-- Example 5: Custom Messages -->
+      <div class="example-card">
+        <h2>5. Custom Messages</h2>
+        <p>Customize welcome message and suggestions.</p>
+        <div class="code-block">const chatbot = new AIChatbot({
+  welcomeMessage: "👋 Welcome! How can I help?",
+  suggestions: [
+    'Shipping info',
+    'Return policy',
+    'Track order'
+  ]
+});</div>
+        <button class="btn" onclick="initExample5()">Try Example 5</button>
+      </div>
+      
+      <!-- Example 6: Auto Open -->
+      <div class="example-card">
+        <h2>6. Auto Open</h2>
+        <p>Automatically open the chat when page loads.</p>
+        <div class="code-block">const chatbot = new AIChatbot({
+  autoOpen: true,
+  welcomeMessage: "Welcome! I'm here to help."
+});</div>
+        <button class="btn" onclick="initExample6()">Try Example 6</button>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="ai-chatbot.css">
+  <script src="ai-chatbot.js"></script>
+  
+  <script>
+    let currentChatbot = null;
+    
+    function cleanup() {
+      if (currentChatbot && currentChatbot.widget) {
+        currentChatbot.widget.remove();
+      }
+      // Remove injected styles
+      const styles = document.getElementById('ai-chatbot-styles');
+      if (styles) styles.remove();
+    }
+    
+    function initExample1() {
+      cleanup();
+      currentChatbot = new AIChatbot();
+      setTimeout(() => currentChatbot.open(), 500);
+    }
+    
+    function initExample2() {
+      cleanup();
+      currentChatbot = new AIChatbot({
+        primaryColor: '#10b981',
+        primaryHover: '#059669',
+        userBubbleColor: '#10b981',
+        welcomeMessage: "Hello! I'm using custom green colors."
+      });
+      setTimeout(() => currentChatbot.open(), 500);
+    }
+    
+    function initExample3() {
+      cleanup();
+      currentChatbot = new AIChatbot({
+        position: 'bottom-left',
+        welcomeMessage: "I'm positioned on the bottom-left!"
+      });
+      setTimeout(() => currentChatbot.open(), 500);
+    }
+    
+    function initExample4() {
+      cleanup();
+      currentChatbot = new AIChatbot({
+        backgroundColor: '#1a1a1a',
+        textColor: '#ffffff',
+        botBubbleColor: '#2d2d2d',
+        userBubbleColor: '#646cff',
+        welcomeMessage: "Welcome to dark mode! 🌙"
+      });
+      setTimeout(() => currentChatbot.open(), 500);
+    }
+    
+    function initExample5() {
+      cleanup();
+      currentChatbot = new AIChatbot({
+        welcomeMessage: "👋 Welcome! How can I help?",
+        suggestions: [
+          'Shipping info',
+          'Return policy',
+          'Track order'
+        ],
+        knowledgeBase: {
+          greetings: ["Hi! I can help with shipping, returns, or order tracking."],
+          default: ["I can help with shipping, returns, or order tracking. What do you need?"]
+        }
+      });
+      setTimeout(() => currentChatbot.open(), 500);
+    }
+    
+    function initExample6() {
+      cleanup();
+      currentChatbot = new AIChatbot({
+        autoOpen: true,
+        welcomeMessage: "Welcome! I opened automatically. 😊"
+      });
+    }
+  </script>
+</body>
+</html>
+
