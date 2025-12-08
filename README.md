@@ -358,9 +358,9 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 [![Star History Chart](https://api.star-history.com/svg?repos=8Liquid/ai-chatbot&type=Date)](https://star-history.com/#8Liquid/ai-chatbot&Date)
 
 ---
-LTC: Lgv936ifGMroAE4EBRiMEpFZezEEbNu9mM
-BTC: bc1qksn8f3ecwaa675qllus6zglnqgqck8mcs7jq2j
-ETH: 0xdd5a1cA000ac3B53021D6b978ED27804bA8d43C8
+If you enjoy this project and want to support its development, consider leaving a tip — it truly helps me keep building and improving!
+➡️ **[https://ko-fi.com/8liquid](https://ko-fi.com/8liquid)**
+
 
 
 
